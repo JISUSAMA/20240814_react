@@ -28,13 +28,30 @@ import ClassComponent from './ClassComponent'
 // }
 
 // export default App
-export default class App extends Component {
-  render(): ReactNode {
-    return (
-      <ul>
-        <ClassComponent href="http://www.google.com" text="go to Google" />
-        <ClassComponent href="http://www.facebook.com" text="go to facebook" />
-      </ul>
-    )
-  }
+// export default class App extends Component {
+//   render(): ReactNode {
+//     return (
+//       <ul>
+//         <ClassComponent href="http://www.google.com" text="go to Google" />
+//         <ClassComponent href="http://www.facebook.com" text="go to facebook" />
+//       </ul>
+//     )
+//   }
+// }
+
+//2) fuction component
+// const App = function () {
+//   return <h1>function Component</h1>
+// }
+// const App = () => <h1>function Component</h1>
+// export default App
+
+import ArrowComponent from './ArrowComponent'
+export default function App() {
+  return (
+    <ul>
+      <ClassComponent href="http://www.google.com" text="go to Google" />
+      <ClassComponent href="http://www.facebook.com" text="go to facebook" />
+    </ul>
+  )
 }
