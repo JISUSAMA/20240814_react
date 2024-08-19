@@ -1,4 +1,5 @@
-//
+// javascript type: object(null 포함),undefined,boolean,number,string,bigint,symbol
+
 export const makeArray = (length: number) => new Array(length).fill(null)
 
 export const range = (min: number, max: number): number[] =>
