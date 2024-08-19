@@ -1,21 +1,20 @@
+import {useState} from 'react'
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
 import './App.css'
 import * as D from './data'
-
 function App() {
+  //const [count, setCount] = useState(0)
+  console.log('App called')
   return (
-    <div>
-      <h1>Hello React</h1>
-      <h3>npm run start</h3>
-      <h3>Hot Reloading</h3>
-      <h3>webpack: Hot Module Replacement</h3>
-
+    <>
+      <h1>Hello React Vite!</h1>
       <p>
-        {D.randomName()}, {D.randomJobTitle()}, {D.randomDayMonthYear()},
+        {D.randomName()},{D.randomJobTitle()},{D.randomDayMonthYear()}
       </p>
-      <img src={D.randomAvatar()} height="50" />
-      <img src={D.randomImage()} height="300" />
-    </div>
+      <img src="{D.randomAvatar()}" height="50" />
+      <img src="{D.randomImage()}" height="300" />
+    </>
   )
 }
-
 export default App
