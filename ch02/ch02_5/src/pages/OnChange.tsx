@@ -40,7 +40,7 @@ export default function OnChange() {
   ))
   const handleFruit = (e: any) => {
     setChoice(e.target.value)
-    console.log(e.target.value)
+    console.log(e.target.selectedIndex)
   }
 
   return (
