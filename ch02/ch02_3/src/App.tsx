@@ -47,11 +47,30 @@ import ClassComponent from './ClassComponent'
 // export default App
 
 import ArrowComponent from './ArrowComponent'
+import P from './P'
+import P2 from './P2'
 export default function App() {
+  const texts = ['hello', 'world'].map(function (text: string, index: number) {
+    return <p key={index} children={text} />
+  })
+  //사용자 컴포넌트를 사용했을 경우
+  const texts2 = ['hello', 'world'].map((text, index) => (
+    <P key={index} children={text}></P>
+  ))
+  const texts3 = ['hello', 'world'].map((text, index) => (
+    <P2 key={index} children={text}></P2>
+  ))
   return (
-    <ul>
-      <ClassComponent href="http://www.google.com" text="go to Google" />
-      <ClassComponent href="http://www.facebook.com" text="go to facebook" />
-    </ul>
+    <>
+      <ul>
+        <ClassComponent href="http://www.google.com" text="go to Google" />
+        <ClassComponent href="http://www.facebook.com" text="go to facebook" />
+        <ArrowComponent href="http://www.google.com" text="go to Google" />
+        <ArrowComponent href="http://www.facebook.com" text="go to facebook" />
+      </ul>
+      <div children={texts} />
+      <div children={texts2} />
+      <div children={texts3} />
+    </>
   )
 }
