@@ -8,6 +8,7 @@ function App() {
       <h3>npm run start</h3>
       <h3>Hot Reloading</h3>
       <h3>webpack: Hot Module Replacement</h3>
+
       <p>
         {D.randomName()}, {D.randomJobTitle()}, {D.randomDayMonthYear()},
       </p>
@@ -16,4 +17,5 @@ function App() {
     </div>
   )
 }
+
 export default App

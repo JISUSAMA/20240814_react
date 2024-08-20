@@ -1,13 +1,13 @@
 import {Component, ReactNode, useState} from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
 import ClassComponent from './ClassComponent'
-//1) Component  class
+
+import './App.css'
+
+// 1) ComponentClass
 // export default class App extends Component {
 //   render(): ReactNode {
-//     const isLoading = true
-//     if (isLoading) return <p>loading...</p>
+//     const isLoading = false
+//     //if (isLoading) return <p>loading...</p>
 //     const children = isLoading ? (
 //       <p>loading...</p>
 //     ) : (
@@ -22,9 +22,15 @@ import ClassComponent from './ClassComponent'
 //     return <div>{children}</div>
 //   }
 // }
+
 // function App() {
 //   const [count, setCount] = useState(0)
-//   return <></>
+
+//   return (
+//     <>
+
+//     </>
+//   )
 // }
 
 // export default App
@@ -39,27 +45,30 @@ import ClassComponent from './ClassComponent'
 //   }
 // }
 
-//2) fuction component
+// 2) function Component
 // const App = function () {
-//   return <h1>function Component</h1>
+//   return <h1>Function Component</h1>
 // }
-// const App = () => <h1>function Component</h1>
+// const App = () => <h1>Function Component</h1>
 // export default App
 
 import ArrowComponent from './ArrowComponent'
 import P from './P'
 import P2 from './P2'
+
 export default function App() {
+  // children 속성은 <div>처럼 하위속성을 포함할 수 있는 컴포넌트에서만 사용
+  // children 속성의 타입은 값을 설정하지 않아도 되는 선택 속성. A?:ReactNode|undefined
   const texts = ['hello', 'world'].map(function (text: string, index: number) {
     return <p key={index} children={text} />
   })
-  //사용자 컴포넌트를 사용했을 경우
   const texts2 = ['hello', 'world'].map((text, index) => (
-    <P key={index} children={text}></P>
+    <P key={index} children={text} />
   ))
   const texts3 = ['hello', 'world'].map((text, index) => (
-    <P2 key={index} children={text}></P2>
+    <P2 key={index} children={text} />
   ))
+
   return (
     <>
       <ul>

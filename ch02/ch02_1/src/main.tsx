@@ -9,6 +9,7 @@ import './index.css'
 // const root = ReactDOM.createRoot(document.getElementById('root'))
 // root.render(virtualDOM)
 
+// key 속성은 같은 이름의 컴포넌트가 여러 개일 때 이들을 구분하기 위함.
 const children = [
   <li key="0">
     <a href="http://www.google.com" target="_blank">
