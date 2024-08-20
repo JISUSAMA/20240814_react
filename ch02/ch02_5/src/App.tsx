@@ -1,8 +1,4 @@
-import {useState} from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
-
 import DispatchEvent from './pages/DispatchEvent'
 import DragDrop from './pages/DragDrop'
 import EventBubbling from './pages/EventBubbling'
@@ -17,20 +13,19 @@ import VariousInputs from './pages/VariousInputs'
 
 function App() {
   return (
-    <>
-      <DispatchEvent />
-      <DragDrop />
-      <EventBubbling />
-      <EventListener />
+    <div>
       <FileDrop />
+      <DragDrop />
       <FileInput />
       <OnChange />
-      <OnClick />
-      <ReactOnClick />
-      <StopPropagation />
       <VariousInputs />
-      <FileDrop />
-    </>
+      <StopPropagation />
+      <EventBubbling />
+      {/* <DispatchEvent />
+      <ReactOnClick />
+      <OnClick />
+      <EventListener /> */}
+    </div>
   )
 }
 
