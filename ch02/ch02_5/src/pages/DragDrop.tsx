@@ -12,12 +12,10 @@ export default function DragDrop() {
   const onDragStart = (e: DragEvent<HTMLInputElement>) =>
     console.log('onDragStart', e.dataTransfer)
   const onDragEnter = (e: DragEvent<HTMLInputElement>) =>
-    console.log('onDragStart', e.dataTransfer)
-  const onDragEnd = (e: DragEvent<HTMLInputElement>) =>
-    console.log('onDragEnd', e.dataTransfer)
+    console.log('onDragEnter', e.dataTransfer)
   const onDragLeave = (e: DragEvent) => {
-    e.preventDefault()
     console.log('onDragLeave', e.dataTransfer)
+    e.preventDefault()
   }
   const onDrop = (e: DragEvent) => {
     e.preventDefault()
@@ -27,10 +25,10 @@ export default function DragDrop() {
   return (
     <div>
       <p>DragDrop</p>
-      <div draggable onDragStart={onDragStart} onDragEnter={onDragLeave}>
+      <div draggable onDragStart={onDragStart} onDragLeave={onDragLeave}>
         <h1>Drag Me</h1>
       </div>
-      <div onDrop={onDrop} onDragOver={onDragEnter}>
+      <div onDrop={onDrop} onDragEnter={onDragEnter}>
         <h1>Drag over Me</h1>
       </div>
     </div>
