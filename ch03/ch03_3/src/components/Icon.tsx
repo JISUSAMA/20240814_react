@@ -1,14 +1,16 @@
-import type {CSSProperties, FC} from 'react'
+import type {FC, DetailedHTMLProps, HTMLAttributes} from 'react'
 
-export type IconProps = {
-  name: string
-  style?: CSSProperties // ?: 는 없어도 된다는 것을 의미함
-}
+type ReactSpanProps = DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>
 
-export const Icon: FC<IconProps> = function (props: IconProps) {
-  const {name, style} = props
+export type IconProps = ReactSpanProps & {name: string}
+export const Icon: FC<IconProps> = function (iconProps: IconProps) {
+  // const {name, className: _className, ...props} = iconProps
+  // const className = 'material-symbols-outlined'
+  const {name, className: _className, ...props} = iconProps
+  const className = `material-symbols-outlined ${_className ?? ''}`.trim()
+
   return (
-    <span className="material-symbols-outlined" style={style}>
+    <span className={className} {...props}>
       {name}
     </span>
   )

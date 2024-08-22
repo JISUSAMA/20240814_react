@@ -10,7 +10,7 @@ export default function PaddingTest() {
         <div className="text-white bg-sky-600">
           <p>{sentence}</p>
         </div>
-        <div className="p-8 text-white bg-orange-600">
+        <div className="m-2 text-white bg-orange-600">
           <p>{sentence}</p>
         </div>
       </div>

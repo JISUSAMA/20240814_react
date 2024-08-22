@@ -16,7 +16,7 @@ export const Title: FC<TitleProps> = ({
     _className,
     numberOfLines
   )
-  return <p {...props} className={className} />
+  return <p {...props} className={' ' + className} />
 }
 
 export type SubtitleProps = TitleProps & {}
