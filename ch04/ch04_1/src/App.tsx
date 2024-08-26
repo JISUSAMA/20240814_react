@@ -1,5 +1,6 @@
 import {useRef, useEffect, useState} from 'react'
 import Clock from './pages/Clock'
+import {useClock} from './hooks' //5)에서만 사용
 
 function App() {
   const [count, setCount] = useState(0)
@@ -47,20 +48,23 @@ function App() {
 
   //4) 데이터 관리(useMemo,useCallback,useState,useReducer)에서
   //useState 사용
-  const [today, setToday] = useState(new Date())
-  useEffect(() => {
-    const id = setInterval(() => {
-      setToday(new Date())
-    }, 1000)
-    return () => clearInterval(id)
-  }, [])
-  return (
-    <div className="w-full h-full">
-      <Clock today={today}></Clock>
-    </div>
-  )
-}
+  //   const [today, setToday] = useState(new Date())
+  //   useEffect(() => {
+  //     const id = setInterval(() => {
+  //       setToday(new Date())
+  //     }, 1000)
+  //     return () => clearInterval(id)
+  //   }, [])
+  //   return (
+  //     <div className="w-full h-full">
+  //       <Clock today={today}></Clock>
+  //     </div>
+  //   )
 
+  //5) custom hook 함수사용(재사용을 목적)
+  const today = useClock()
+  return <Clock today={today} />
+}
 export default App
 
 /* 일반적인 자바스크립트로 시간 갱신 할 때
