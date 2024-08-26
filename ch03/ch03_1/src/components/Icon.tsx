@@ -1,8 +1,8 @@
-import type {CSSProperties, FC} from 'react'
+import type {FC, CSSProperties} from 'react'
 
 export type IconProps = {
   name: string
-  style?: CSSProperties // ?: 는 없어도 된다는 것을 의미함
+  style?: CSSProperties //?: 없어도 된다.
 }
 
 export const Icon: FC<IconProps> = function (props: IconProps) {

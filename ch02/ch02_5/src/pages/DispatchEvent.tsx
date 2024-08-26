@@ -2,7 +2,8 @@ export default function DispatchEvent() {
   const onCallDispatchEvent = function () {
     console.log('DispatchEvent::mouse click on <button>')
     // prettier-ignore
-    document.getElementById('root')?.dispatchEvent(new Event('click', {bubbles: true}))
+    document.getElementById('root')?.dispatchEvent(
+      new Event('click', {bubbles: true}))
   }
   // 결과 : window의 EventListener, onclick은 isTrusted가 true
   // new Event()는 window의 이벤트가 아니기 때문에 isTrusted가 false로 1번 나온다

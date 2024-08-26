@@ -1,16 +1,16 @@
-import './App.css'
-
 import Tailwindcss from './pages/Tailwindcss'
 import Color from './pages/Color'
-import TextTests from './pages/TextTests'
+import TextsTest from './pages/TextsTest'
+import './App.css'
 
 function App() {
   return (
     <>
-      <Tailwindcss></Tailwindcss>
-      <Color></Color>
-      <TextTests></TextTests>
+      <TextsTest />
+      <Color />
+      <Tailwindcss />
     </>
   )
 }
+
 export default App

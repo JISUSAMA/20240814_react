@@ -2,11 +2,11 @@ const rootDiv = document.getElementById('root')
 if (rootDiv) {
   rootDiv.onclick = function (e: Event) {
     const {isTrusted, target, bubbles} = e
-    console.log('OnClick:: mouse click occurs!', isTrusted, target, bubbles)
+    console.log('OnClick::mouse click on rootDiv', isTrusted, target, bubbles)
   }
   rootDiv.onclick = function (e: Event) {
     const {isTrusted, target, bubbles} = e
-    console.log('OnClick :: mouse click also occurs!', isTrusted, target, bubbles)
+    console.log('OnClick::mouse click also occurs on rootDiv', isTrusted, target, bubbles)
   }
 }
 

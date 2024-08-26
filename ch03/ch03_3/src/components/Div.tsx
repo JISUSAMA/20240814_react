@@ -8,7 +8,8 @@ export type ReactDivProps =
 
 // prettier-ignore
 export type DivProps = 
-  ReactDivProps & PropsWithChildren<WidthHeight> & LeftRightTopBottom & {src?: string}
+  ReactDivProps & PropsWithChildren<WidthHeight> & LeftRightTopBottom 
+  & {src?: string}
 
 // prettier-ignore
 export const Div: FC<DivProps> = ({
@@ -19,7 +20,7 @@ export const Div: FC<DivProps> = ({
     ..._style,width,height,backgroundImage: src && `url(${src})`,
     left,right,top,bottom
   }
-  // box-sizing : 컨테이너 크기를 결정(content-box, border-box, padding-box, inherit)
+  // box-sizing :  컨테이너 크기를 결정(content-box, border-box, padding-box, inherit)
   // tailwindcss에는                  box-content, box-border 2가지가 존재
   const className = ['box-sizing', src && 'bg-gray-300', _className].join(' ')
   return <div {...props} className={className} style={style} />
