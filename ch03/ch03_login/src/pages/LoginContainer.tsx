@@ -2,7 +2,16 @@ import {Title} from '../components'
 
 export default function LoginContainer() {
   const setLabel = (wSize: string): object => {
-    return {width: wSize + 'px', display: 'inline-block'}
+    return {
+      width: wSize + 'px',
+      display: 'inline-block'
+    }
+  }
+  const setInput = () => {
+    return {
+      padding: '7px',
+      borderRadius: '5px'
+    }
   }
 
   return (
@@ -14,24 +23,30 @@ export default function LoginContainer() {
       </Title>
       <form method="post" action="">
         <div className="flex items-center justify-center mb-3 ">
-          <label htmlFor="exampleInputEmail1" style={setLabel('70')}>
+          <label htmlFor="exampleInputEmail1" style={setLabel('75')}>
             Email
           </label>
           <input
             type="email"
-            className="form-control"
+            className="text-black form-control"
             id="exampleInputEmail1"
+            style={setInput()}
             aria-describedby="emailHelp"
           />
         </div>
         <div className="flex items-center justify-center mb-3 ">
-          <label htmlFor="exampleInputPassword1" style={setLabel('70')}>
+          <label htmlFor="exampleInputPassword1" style={setLabel('75')}>
             Password
           </label>
-          <input type="password" className="form-control" id="exampleInputPassword1" />
+          <input
+            type="password"
+            className="text-black form-control"
+            style={setInput()}
+            id="exampleInputPassword1"
+          />
         </div>
         <div className="flex flex-row items-center justify-end pr-6 mb-3 form-check">
-          <input type="checkbox" className="form-check-input" id="exampleCheck1" />
+          <input type="checkbox" className="form-check-input " id="exampleCheck1" />
           <label className="form-check-label" htmlFor="exampleCheck1">
             Check me out
           </label>

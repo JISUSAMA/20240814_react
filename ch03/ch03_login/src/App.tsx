@@ -6,7 +6,8 @@ import JoinContainer from './pages/JoinContainer'
 function App() {
   return (
     <main className="flex items-center justify-center w-full h-full">
-      <LoginContainer />
+      {/* <LoginContainer /> */}
+      <JoinContainer />
     </main>
   )
 }
