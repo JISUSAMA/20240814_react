@@ -65,7 +65,7 @@ export default function FileDrop() {
   // prettier-ignore
   return (
     <section className="mt-4">
-      <Title>FileDrop</Title>
+      <Title>ForwardRefTest</Title>
       {error && (
         <div className="p-4 mt-4 bg-red-200">
           <p className="text-3xl text-red-500 text-bold">{error.message}</p>

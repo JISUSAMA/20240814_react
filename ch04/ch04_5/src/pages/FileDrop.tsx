@@ -19,7 +19,7 @@ export default function FileDrop() {
       const promises = Array.from(files).map(imageFileReaderP)
       toggleLoading()
       Promise.all(promises)
-        .then(urls => setImageUrls(imageUrls => [...urls, ...imageUrls]))
+        .then(urls => setImageUrls(imageUrls => [...imageUrls, ...urls]))
         .catch(setError)
         .finally(toggleLoading)
     },
@@ -55,8 +55,10 @@ export default function FileDrop() {
           key={index}
           src={url}
           className="m-2 bg-transparent bg-center bg-no-repeat bg-contain"
-          width="5rem"
-          height="5rem"
+          width="100vw"
+          height="100vh"
+          // width="5rem"
+          // height="5rem"
         />
       )),
     [imageUrls]
