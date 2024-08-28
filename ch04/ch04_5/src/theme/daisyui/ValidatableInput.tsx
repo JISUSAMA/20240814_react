@@ -5,13 +5,15 @@ export type ValidatableInputMethods = {
   validate: () => [boolean, string]
 }
 
-//forwardRef는 컴포넌트가 ref 를 사용하여 부모 컴포넌트의 DOM 노드를 노출 할 수 있다
+//forwardRef는 컴포넌트가 ref 를 사용하여 부모 컴포넌트의 DOM 노드를 노출 할 수 있다.
 export const ValidatableInput = forwardRef<ValidatableInputMethods, ReactInputProps>(
   ({type, className: _className, ...inputProps}, methodsRef) => {
     const className = useMemo(() => ['input', _className].join(' '), [_className])
     const inputRef = useRef<HTMLInputElement>(null)
 
-    // useImperativeHandle은 다른 컴포넌트들과 달리 컴포넌트 내부에서만 사용해야 한다.
+    // useImperativeHandle을 사용함으로 사용자 컴포넌트에 포함되는 함수를 정의할 수있따.
+    // 다른 컴포넌트들과 달리 컴포넌트 내부에서만 사용해야 한다.
+    // 다시 말하면 ref 로 노출되는 핸들을 사용자가 직접 정의 할 수 있게 한다.
     useImperativeHandle(
       methodsRef,
       () => ({
