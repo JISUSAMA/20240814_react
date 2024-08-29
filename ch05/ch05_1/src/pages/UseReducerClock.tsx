@@ -12,6 +12,7 @@ export default function UseReducerClock() {
   // useReducer()는 리덕스의 리듀서와 사실상 똑같은 기능 수행
   // useReducer(리듀서, 상태초기값)
   //useReducer() 훅 함수를 로컬하게 생성, dispatch 에는 useReducer
+
   const [{today}, dispatch] = useReducer(
     (state: AppState, action: SetTodayAction) => {
       switch (action.type) {
