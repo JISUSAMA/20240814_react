@@ -3,7 +3,13 @@ import {useMemo} from 'react'
 import {rootReducer} from './rootReducer'
 
 const initializeStore = () => {
-  const store = configureStore({reducer: rootReducer, middleware: []})
+  //configureStore 는 리듀서에서 반환한 새로운 상태를 store 객체로 관리
+  const store = configureStore({
+    reducer: rootReducer,
+    middleware: getDefaultMiddleware => {
+      return []
+    }
+  })
   return store
 }
 

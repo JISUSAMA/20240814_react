@@ -1,6 +1,7 @@
 import type {Actions} from './actions'
 import type {AppState} from './AppState'
 
+//AppState 의 초기화
 const initialAppState = {
   today: new Date()
 }
