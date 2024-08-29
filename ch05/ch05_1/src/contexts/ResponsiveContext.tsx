@@ -20,7 +20,6 @@ export const ResponsiveProvider: FC<PropsWithChildren<ResponsiveProviderProps>> 
   // prettier-ignore
   const breakpoint = width < 640 ? 'sm' : 
                      width < 768 ? 'md' : 
-                    
                      width < 1024 ? 'lg' : 
                      width < 1280 ? 'xl' : '2xl'
   //공유 하려고하는 값이 복수개일 경우가 많아서 value 라는 객체를 선언
