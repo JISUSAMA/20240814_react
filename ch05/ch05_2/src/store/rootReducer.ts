@@ -1,17 +1,13 @@
-import type {Actions} from './actions'
-import type {AppState} from './AppState'
+import {combineReducers} from 'redux'
 
-//AppState 의 초기화
-const initialAppState = {
-  today: new Date()
-}
+import * as Clock from './clock'
+import * as Counter from './counter'
+import * as RemoteUser from './remoteUser'
+import * as Cards from './cards'
 
-// 과거 상태값 today을 새로운 상태값 action.today으로 반환한다. 줄이는 용도
-export const rootReducer = (state: AppState = initialAppState, action: Actions) => {
-  switch (action.type) {
-    case 'setToday': {
-      return {...state, today: action.today}
-    }
-  }
-  return state // 필수
-}
+export const rootReducer = combineReducers({
+  clock: Clock.reducer,
+  counter: Counter.reducer,
+  remoteUser: RemoteUser.reducer,
+  cards: Cards.reducer
+})
