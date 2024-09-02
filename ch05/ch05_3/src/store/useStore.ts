@@ -11,12 +11,7 @@ const useLogger = process.env.NODE_ENV !== 'production'
 const initializeStore = () => {
   const middleware: any[] = [thunk]
   if (useLogger) middleware.push(logger)
-  const store = configureStore({
-    reducer: rootReducer,
-    middleware: getDefaultMiddleware => {
-      return []
-    }
-  })
+  const store = configureStore({reducer: rootReducer, middleware})
   return store
 }
 
