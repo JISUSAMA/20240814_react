@@ -9,17 +9,25 @@ export default function FileDrop() {
   const [error, setError] = useState<Error | null>(null)
   const [loading, toggleLoading] = useToggle(false)
 
+  // ref 속성은 물리 DOM객체의 참조할 때 사용, 모든 리액트 컴포넌트의 속성
   const inputRef = useRef<HTMLInputElement>(null)
   const onDivClick = useCallback(() => inputRef.current?.click(), [])
 
   // image 변환을 위한 함수 선언
   const makeImageUrls = useCallback(
-    (files: File[]) => {
+    function (files: File[]) {
       //Array.from은 File[]을 string[]로 변환
       const promises = Array.from(files).map(imageFileReaderP)
+      console.log('promises:' + promises)
       toggleLoading()
       Promise.all(promises)
-        .then(urls => setImageUrls(imageUrls => [...urls, ...imageUrls]))
+        .then(function (urls) {
+          setImageUrls(function (imageUrls) {
+            // 기존 이미지들 앞에 새 이미지 추가
+            return [...urls, ...imageUrls]
+          })
+          console.log('urls:' + urls)
+        })
         .catch(setError)
         .finally(toggleLoading)
     },
@@ -65,7 +73,7 @@ export default function FileDrop() {
   // prettier-ignore
   return (
     <section className="mt-4">
-      <Title>ForwardRefTest</Title>
+      <Title>FileDrop</Title>
       {error && (
         <div className="p-4 mt-4 bg-red-200">
           <p className="text-3xl text-red-500 text-bold">{error.message}</p>

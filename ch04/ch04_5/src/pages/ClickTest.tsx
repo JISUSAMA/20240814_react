@@ -3,13 +3,13 @@ import {useRef, useCallback} from 'react'
 
 export default function ClickTest() {
   const inputRef = useRef<HTMLInputElement>(null)
-  // const onClick = useCallback(()=>{
-  //   const input = inputRef.current
-  //   if(!input) return
-  //   input.click();
-  // }, [])
 
   // ?. :: null이 아닌 경우에 inputRef.current값을 얻게 함. 널병합 연산자
+
+  // const onClick = useCallback(()=>{
+  //   if(!inputRef.current) return null
+  //   input.click();
+  // }, [])
   const onClick = useCallback(() => inputRef.current?.click(), [])
 
   return (

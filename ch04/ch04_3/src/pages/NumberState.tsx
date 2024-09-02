@@ -5,18 +5,19 @@ import {Icon} from '../theme/daisyui'
 export default function NumberState() {
   const [count, setCount] = useState<number>(0)
 
+  // 방법0) function 으로 정의
   // const increment = function () {
   //   setCount(count + 1)
   //   console.log('count: ', count)
   // }
 
-  // S :: 방법1) count의 값을 증가할 수 있다.
+  // S :: 방법1) 방법0을 화살표 함수로 변환
   // const increment = () => {
   //   setCount(count + 1)
   //   console.log('count: ', count)
   // }
 
-  // ()=>S :: 방법2) count의 값을 증가할 수 있다.
+  // ()=>S :: 방법2) setCount 매개변수를 함수로 지정
   // const increment = () => {
   //   setCount(count => count + 1)
   //   console.log('count: ', count)
@@ -28,7 +29,7 @@ export default function NumberState() {
   // 컴포넌트에서 props 가 바뀌지 않았으면 Virtual DOM 에 새로 렌더링하는 것 조차 하지 않고
   // 컴포넌트의 결과물을 재사용 하는 최적화 작업을 할건데 이 작업을 하려면, 함수를 재사용하는것이 필수
 
-  // 방법3) useCallback 사용하고 의존성 목록에 값이 없을 때 => count는 0을 유지
+  // 방법3) useCallback 사용하고 의존성 목록 []이 비었을 때 => count는 0을 유지
   // const increment = useCallback(() => {
   //   setCount(count + 1)
   //   console.log('count: ', count)

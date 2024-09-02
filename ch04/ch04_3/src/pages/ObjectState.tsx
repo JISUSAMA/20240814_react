@@ -56,13 +56,18 @@ export default function ObjectState() {
 
       // 6) 최종 :  ()를 사용하여 복합실행문이 아니라고 표기
       setForm(state => ({...state, name: e.target.value}))
+      console.log(form.name)
     },
     [form.name]
   )
 
-  const onChangeEmail = useCallback((e: ChangeEvent<HTMLInputElement>) => {
-    setForm(form => ({...form, email: e.target.value}))
-  }, [])
+  const onChangeEmail = useCallback(
+    (e: ChangeEvent<HTMLInputElement>) => {
+      setForm(form => ({...form, email: e.target.value}))
+      console.log(form.email)
+    },
+    [form.email]
+  )
 
   return (
     <section className="mt-4">

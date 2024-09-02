@@ -21,7 +21,7 @@ import {Div, Title, Subtitle} from '../components'
 import {useInterval} from '../hooks'
 
 export default function ReduxClock() {
-  // useSelector :: store에 상태값을 알고자 할 때
+  // useSelector :: store에 today변수와 연결
   const today = useSelector<AppState, Date>(state => state.today)
 
   // useDispatch :: store에 내용을 보낼 때
@@ -29,7 +29,7 @@ export default function ReduxClock() {
 
   useInterval(() => {
     // ★ [dispatch(액션) -> 리듀서 -> 리덕스 스토어] 액션은 리듀서에 의해 관여된다.
-    // dispatch() 함수를 통해 type 속성값이 'setToday' 인 액션을 리덕스에 호출,
+    // dispatch()함수를 통해 type속성값이 'setToday'인 액션을 리덕스에 호출,
     // today에는 갱신된 Date 객체를 보냄(시간 갱신)
     dispatch({type: 'setToday', today: new Date()})
   })

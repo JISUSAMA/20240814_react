@@ -7,7 +7,9 @@ import * as C from '../store/clock'
 export default function ClockTest() {
   const clock = useSelector<AppState, C.State>(state => state.clock)
   const dispatch = useDispatch()
-  //C.setClock()를 이용홰서 store 에서 정의된 함수로 state.clock 을 업뎃.
+  // useInterval(() => dispatch({type: '@clock/setClock', payload: new Date()}))
+  // 위의 5_1은 객체를 변수에 할당,
+  // 아래의 C.setClock()은 객체를 리턴해주는 함수를 store에 정의해서 사용.
   useInterval(() => dispatch(C.setClock(new Date())))
 
   return (

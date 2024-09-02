@@ -1,7 +1,7 @@
 import {Title, Avatar, Icon} from '../components'
 import * as D from '../data'
 import {useToggle} from '../hooks'
-import {useState, useCallback, useEffect} from 'react'
+import {useState, useCallback} from 'react'
 
 export default function FetchTest() {
   // API서버에서 데이터를 가져온 데이터 선언
@@ -20,7 +20,7 @@ export default function FetchTest() {
       <div className="flex justify-center mt-4">
         <button className="btn btn-sm btn-primary" onClick={getRandomUser}>
           <Icon name="get_app" />
-          <span>get random user</span>
+          <span>get random user {loading}</span>
         </button>
       </div>
       {loading && (

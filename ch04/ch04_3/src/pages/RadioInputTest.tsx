@@ -6,6 +6,7 @@ import * as D from '../data'
 export default function RadioInputTest() {
   const jobTitles = useMemo(() => D.makeArray(4).map(D.randomJobTitle), [])
   const [selectedJobTitle, setSelectedJobTitle] = useState<string>(jobTitles[0])
+
   const onChange = useCallback(
     (e: ChangeEvent<HTMLInputElement>) => {
       setSelectedJobTitle(notUsed => e.target.value)

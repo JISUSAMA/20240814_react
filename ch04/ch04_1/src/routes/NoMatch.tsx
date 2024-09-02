@@ -10,13 +10,13 @@ export default function NoMatch() {
   }, [navigate])
   return (
     <div>
-      <div className="flex p-4 bg-gray-200">
+      <div className="flex p-4 ">
         <Link to="/">Home</Link>
-        <Link to="/welcome" className="ml-4">
-          Welcome
+        <Link to="/login" className="ml-4">
+          Login
         </Link>
-        <Link to="/board" className="ml-4">
-          Board
+        <Link to="/join" className="ml-4">
+          Join
         </Link>
       </div>
       <p className="p-4 text-xl text-center alert alert-error">Oops! No page found!</p>

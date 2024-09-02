@@ -1,4 +1,4 @@
-import {useState, useCallback} from 'react'
+import {useCallback} from 'react'
 import {useSelector, useDispatch} from 'react-redux'
 import {Title, Subtitle} from '../components'
 import {Icon} from '../theme/daisyui'

@@ -35,7 +35,7 @@ export default function RemoteUserTest() {
     () => dispatch(R.changePicture({large: D.randomAvatar()})),
     [dispatch]
   )
-  useEffect(getRemoteUser, [getRemoteUser]) //페이지가 만들어질 때 임의 사용자 로드
+  useEffect(getRemoteUser, [getRemoteUser])
   return (
     <section className="mt-4">
       <Title>RemoteUserTest</Title>

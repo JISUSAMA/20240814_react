@@ -21,9 +21,11 @@ export default function InputTest() {
   const onChangeChecked = useCallback(
     (e: ChangeEvent<HTMLInputElement>) => {
       // checked = e.target.checked
-      //setCheck(function(){})
+      // setChecked(function () {
+      //   return e.target.checked
+      // })
       setChecked(notUsed => e.target.checked)
-      console.log(checked)
+      console.log(checked) // useCallback에서 checked 출력시에는 변하기전 값출력
     },
     [checked]
   )
@@ -46,6 +48,7 @@ export default function InputTest() {
           className="input-primary input-sm"
         />
         <label>{value}</label>
+
         <input type="checkbox" checked={checked} onChange={onChangeChecked} />
         <Input
           type="checkbox"

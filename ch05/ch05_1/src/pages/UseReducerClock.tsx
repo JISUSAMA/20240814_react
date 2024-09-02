@@ -11,22 +11,32 @@ export default function UseReducerClock() {
 
   // useReducer()는 리덕스의 리듀서와 사실상 똑같은 기능 수행
   // useReducer(리듀서, 상태초기값)
-  //useReducer() 훅 함수를 로컬하게 생성, dispatch 에는 useReducer
-
+  /*  useReducer는 리액트의 훅 함수
+  function useReducer<R extends Reducer<any, any>>(
+    reducer: R,
+    initialState: ReducerState<R>,
+    initializer?: undefined
+  ): [ReducerState<R>, Dispatch<ReducerAction<R>>]*/
+  // useReducer()훅함수를 이용해서 Redux Store와 연결
+  // reducer를 로컬하게 생성, dispatch에는 할당
   const [{today}, dispatch] = useReducer(
-    (state: AppState, action: SetTodayAction) => {
+    //reducer
+    function (state: AppState, action: SetTodayAction) {
       switch (action.type) {
         case 'setToday':
           return {...state, today: new Date()}
       }
     },
+    //initialState
     {
       today: new Date()
     }
-  )
+  ) //리턴타입: [ReducerState<R>, Dispatch<ReducerAction<R>>]
+  // useInterval()은 실질적인 값을 스토어로 보내는 액션을 함.
   useInterval(() => {
     dispatch({type: 'setToday', today: new Date()})
   })
+
   return (
     <Div className="flex flex-col items-center justify-center h-24">
       <Title className="text-5xl">UseReducerClock</Title>

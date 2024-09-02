@@ -7,6 +7,8 @@ export default function Memo() {
   const headTexts = useMemo<string[]>(() => [
     'No.', 'Name', 'Job Title', 'Email Adress'
   ], [])
+  // 의존성 목록: 데이터를 갱신하게 할 요소를 의존성이라고 하고 복수일 때 의존성목록.
+
   const users = useMemo<D.IUser[]>(() => D.makeArray(10).map(D.makeRandomUser), [])
 
   const head = useMemo(

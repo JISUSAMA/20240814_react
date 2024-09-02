@@ -1,8 +1,9 @@
 import type * as T from './types'
 
-//5-! 차이점 : 객체를 변수에 할당
-//5-2 는 객체를 리턴해주는 함수를 정의
-export const setClock = (payload: T.State): T.SetClockAction => ({
-  type: '@clock/setClock',
-  payload: payload
-})
+// 5_1에서는 없었던 함수, 리턴하는 객체는 동일한 구조
+export const setClock = function (payload: T.State): T.SetClockAction {
+  return {
+    type: '@clock/setClock',
+    payload: payload
+  }
+}

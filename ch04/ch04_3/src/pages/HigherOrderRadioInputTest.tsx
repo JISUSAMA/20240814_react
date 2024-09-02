@@ -10,7 +10,7 @@ export default function HigherOrderRadioInputTest() {
   const onChange = useCallback(
     // 고차함수 사용 이유: index가 달라서 함수가 가변적이기 때문에 타입 불일치해서 사용
     (index: number) => () => setSelectedIndex(notUsed => index),
-    []
+    [selectedIndex]
   )
   const radioInputs = useMemo(
     () =>

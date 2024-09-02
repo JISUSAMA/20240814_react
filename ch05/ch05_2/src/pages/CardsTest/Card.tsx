@@ -5,18 +5,17 @@ import {Icon} from '../../theme/daisyui'
 
 export type UserCardProps = {
   card: ICard
-  onRemove: () => {}
+  onRemove?: () => void
 }
-
 const Card: FC<UserCardProps> = ({card, onRemove}) => {
-  const {image, writer} = card
+  const {writer, image} = card
   const {avatar, name, jobTitle} = writer
 
   return (
     <Div className="m-2 border shadow-lg rounded-xl" width="10rem">
-      <Div src={image} className="relative h-20">
+      <Div className="relative h-20" src={image}>
         <Icon
-          name="remove"
+          name="X"
           className="absolute right-1 top-1 btn-primary btn-xs"
           onClick={onRemove}
         />
