@@ -1,9 +1,12 @@
 import './App.css';
+import Hello from './component/Hello';
+import Wellcome from './component/Wellcome';
 
 function App() {
   return (
     <div className="App">
-    <h1 style={{color: "red"}}>Welcome</h1>  
+      <Hello>dddddd</Hello>
+      <Wellcome></Wellcome>
     </div>
   );
 }
