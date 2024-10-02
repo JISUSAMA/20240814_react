@@ -3,7 +3,7 @@ import {Provider as ReduxProvider} from 'react-redux'
 import {configureStore} from '@reduxjs/toolkit'
 import type {Action} from '@reduxjs/toolkit'
 import {BrowserRouter} from 'react-router-dom'
-import './routes/RoutesSetup'
+import RoutesSetup from './routes/RoutesSetup'
 
 type AppState = {today: Date}
 const initialAppState = {today: new Date()}
@@ -16,7 +16,9 @@ const store = configureStore({
 function App() {
   return (
     <ReduxProvider store={store}>
-      <BrowserRouter></BrowserRouter>
+      <BrowserRouter>
+        <RoutesSetup />
+      </BrowserRouter>
     </ReduxProvider>
   )
 }
