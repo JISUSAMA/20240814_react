@@ -1,11 +1,11 @@
+/* 아래의 코드는 store를 정의하는 코드가 합쳐져서 복잡해 보임 
+import {Action} from 'redux'
 import {Provider as ReduxProvider} from 'react-redux'
+import {configureStore} from '@reduxjs/toolkit'
 
 import ReduxClock from './pages/ReduxClock'
 import UseReducerClock from './pages/UseReducerClock'
 
-/* 아래의 코드는 store를 정의하는 코드가 합쳐져서 복잡해 보임
-import {configureStore} from '@reduxjs/toolkit'
-import {Action} from 'redux'
 //1) 최상위 수준에서 동작하기 위해서는 Provider 최상위에서 선언
 // 앱을 구성하는 모든 컴포넌트가 함께 공유할 수 있는 상태를 앱 수준 상태
 // 줄여서 앱상태(app-level-states)
@@ -19,7 +19,7 @@ const initialAppState = {
 }
 
 //3) 리덕스 저장소를 사용하려면 접근방법인 reducer(앱상태, 액션)라는 함수 선언
-const rootReducer = function(state: AppState = initialAppState, action: Action) {
+const rootReducer = function (state: AppState = initialAppState, action: Action) {
   return state
 }
 
@@ -27,9 +27,7 @@ const rootReducer = function(state: AppState = initialAppState, action: Action) 
 // prettier-ignore
 const store = configureStore({
   reducer: rootReducer, 
-  middleware:(getDefaultMiddleware) => {
-    return []
-  },
+  middleware: getDefaultMiddleware => getDefaultMiddleware()
 })
 
 export default function App() {
@@ -44,8 +42,12 @@ export default function App() {
 }
 */
 
-/* store를 분리해서 간결한 코드 작성 */
+/* store를 파일로 분리해서 간결한 코드 작성 */
+import {Provider as ReduxProvider} from 'react-redux'
 import {useStore} from './store'
+
+import ReduxClock from './pages/ReduxClock'
+import UseReducerClock from './pages/UseReducerClock'
 
 export default function App() {
   const store = useStore()
@@ -58,3 +60,4 @@ export default function App() {
     </ReduxProvider>
   )
 }
+/* store를 파일로 분리해서 간결한 코드 작성 */

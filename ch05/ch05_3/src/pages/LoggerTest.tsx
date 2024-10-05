@@ -1,6 +1,7 @@
 import {useEffect} from 'react'
 import {useDispatch} from 'react-redux'
 import {Title} from '../components'
+
 export default function LoggerTest() {
   const dispatch = useDispatch()
   useEffect(() => {

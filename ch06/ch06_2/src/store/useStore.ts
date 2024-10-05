@@ -12,7 +12,7 @@ const initializeStore = () => {
     middleware.push(logger)
   }
 
-  const store = configureStore({reducer: rootReducer, middleware})
+  const store = configureStore({reducer: rootReducer, middleware: middleware})
   return store
 }
 

@@ -22,7 +22,6 @@ export default function RoutesSetup() {
             </RequireAuth>
           }
         />
-        <Route path="*" element={<NoMatch />} />
       </Route>
       <Route path="/signup" element={<Signup />} />
       <Route path="/login" element={<Login />} />

@@ -18,7 +18,7 @@ export default function UseReducerClock() {
     initializer?: undefined
   ): [ReducerState<R>, Dispatch<ReducerAction<R>>]*/
   // useReducer()훅함수를 이용해서 Redux Store와 연결
-  // reducer를 로컬하게 생성, dispatch에는 할당
+  // reducer(순수 함수여야 함)를 로컬하게 생성, dispatch에는 할당
   const [{today}, dispatch] = useReducer(
     //reducer
     function (state: AppState, action: SetTodayAction) {
@@ -26,6 +26,7 @@ export default function UseReducerClock() {
         case 'setToday':
           return {...state, today: new Date()}
       }
+      return state // 필수
     },
     //initialState
     {

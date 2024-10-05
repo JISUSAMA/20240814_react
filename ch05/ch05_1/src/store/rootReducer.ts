@@ -1,5 +1,6 @@
-import type {AppState} from './AppState'
+// import type {Action} from 'redux'
 import type {Actions} from './actions'
+import type {AppState} from './AppState'
 
 // AppState의 초기화
 const initialAppState = {

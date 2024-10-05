@@ -17,9 +17,9 @@ export default function CounterTest() {
       <Title>CounterTest</Title>
       <div className="flex justify-center p-4 mt-4">
         <div className="flex items-center justify-around w-1/3 text-blue-500 text-bold">
-          <Icon name="add_circle" onClick={increase} />
+          <Icon name="+" onClick={increase} />
           <Subtitle>{counter}</Subtitle>
-          <Icon name="remove_circle" onClick={decrease} />
+          <Icon name="-" onClick={decrease} />
         </div>
       </div>
     </section>

@@ -1,4 +1,4 @@
-import {useState, useCallback, useEffect} from 'react'
+import {useCallback, useEffect} from 'react'
 import {useSelector, useDispatch} from 'react-redux'
 import {Title, Avatar} from '../components'
 import {Button} from '../theme/daisyui'
@@ -13,6 +13,7 @@ export default function FetchTest() {
     errorMessage,
     fetchUser: user
   } = useSelector<AppState, AppState>(state => state)
+  // https://nadomolrai.tistory.com/13
 
   const getRemoteUser = useCallback(() => {
     dispatch<any>(F.getRemoteUser())
